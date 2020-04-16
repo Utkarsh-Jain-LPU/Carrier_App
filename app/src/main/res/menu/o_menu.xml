@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/map_o"
+        android:title="Show on Map"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/pick"
+        android:title="Pick Item to deliver"
+        tools:ignore="HardcodedText" />
+
+</menu>

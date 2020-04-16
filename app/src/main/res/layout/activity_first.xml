@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".FirstActivity">
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="15sp"
+        android:onClick="func"
+        android:layout_margin="10dp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sender"
+        android:textSize="15sp"
+        android:onClick="func"
+        android:layout_margin="10dp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/rider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rider"
+        android:textSize="15sp"
+        android:onClick="func"
+        android:layout_margin="10dp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receiver"
+        android:textSize="15sp"
+        android:onClick="func"
+        android:layout_margin="10dp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

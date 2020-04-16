@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".recieverActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rider's Status"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:onClick="func"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        android:paddingHorizontal="10dp"/>
+
+</RelativeLayout>
