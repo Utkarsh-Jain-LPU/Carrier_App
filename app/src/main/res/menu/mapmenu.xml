@@ -3,13 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/map_o"
-        android:title="Show on Map"
+        android:id="@+id/extra"
+        android:title="Extra"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/drop"
+        android:title="Show Drop Location"
         tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/pick"
-        android:title="Pick Item to deliver"
+        android:title="Show Pickup Location"
         tools:ignore="HardcodedText" />
 
 </menu>

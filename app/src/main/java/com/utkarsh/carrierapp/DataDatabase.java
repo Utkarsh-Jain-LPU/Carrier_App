@@ -71,16 +71,21 @@ public class DataDatabase extends SQLiteOpenHelper {
         database.delete("info",where,ss);
     }*/
 
-    /*void UpdateData(String name,String number,String email) {
+    void UpdateData(String nm, String spec, String pick, String del, String num, String fare, String status) {
 
         SQLiteDatabase database = getWritableDatabase();
         String where = "name = ?";
-        String[] ss = {name};
+        String[] ss = {nm};
         ContentValues contentValues = new ContentValues();
-        contentValues.put("num",number);
-        contentValues.put("email",email);
-        database.update("info",contentValues,where,ss);
-    }*/
+        contentValues.put("name",nm);
+        contentValues.put("spec",spec);
+        contentValues.put("pick",pick);
+        contentValues.put("del",del);
+        contentValues.put("num",num);
+        contentValues.put("fare",fare);
+        contentValues.put("status",status);
+        database.update("data",contentValues,where,ss);
+    }
 
     /*ArrayList<Example> SearchData(String data) {
 
