@@ -5,9 +5,10 @@ import android.os.Parcelable;
 
 class Qwerty implements Parcelable {
 
+    private byte[] image;
     private String name,spec,pick,del,number,fare,status;
 
-    Qwerty(String name, String spec, String pick, String del, String number, String fare, String status) {
+    Qwerty(String name, String spec, String pick, String del, String number, String fare, String status, byte[] image) {
         this.name = name;
         this.spec = spec;
         this.pick = pick;
@@ -15,6 +16,7 @@ class Qwerty implements Parcelable {
         this.number = number;
         this.fare = fare;
         this.status = status;
+        this.image = image;
     }
 
     private Qwerty(Parcel in) {
@@ -25,6 +27,7 @@ class Qwerty implements Parcelable {
         number = in.readString();
         fare = in.readString();
         status = in.readString();
+        image = in.createByteArray();
     }
 
     public static final Creator<Qwerty> CREATOR = new Creator<Qwerty>() {
@@ -67,6 +70,10 @@ class Qwerty implements Parcelable {
         return status;
     }
 
+    byte[] getImage() {
+        return image;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -81,5 +88,6 @@ class Qwerty implements Parcelable {
         dest.writeString(number);
         dest.writeString(fare);
         dest.writeString(status);
+        dest.writeByteArray(image);
     }
 }

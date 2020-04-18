@@ -22,6 +22,7 @@ public class recieverActivity extends AppCompatActivity {
 
     public void func(View view) {
         Intent intent = new Intent(recieverActivity.this,StatusActivity.class);
+        intent.putExtra("ABC","reciever");
         startActivity(intent);
     }
 }

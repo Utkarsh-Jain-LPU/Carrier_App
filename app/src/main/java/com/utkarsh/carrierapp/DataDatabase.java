@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 
 public class DataDatabase extends SQLiteOpenHelper {
@@ -20,7 +19,7 @@ public class DataDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE data(name text,spec text,pick text,del text,num text,fare text,status text)";
+        String query = "CREATE TABLE data(name text,spec text,pick text,del text,num text,fare text,status text,Image blob)";
         db.execSQL(query);
     }
 
@@ -29,7 +28,7 @@ public class DataDatabase extends SQLiteOpenHelper {
 
     }
 
-    void InsertData(String nm, String spec, String pick, String del, String num, String fare) {
+    void InsertData(String nm, String spec, String pick, String del, String num, String fare, byte[] image) {
 
         SQLiteDatabase database = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -40,6 +39,7 @@ public class DataDatabase extends SQLiteOpenHelper {
         contentValues.put("num",num);
         contentValues.put("fare",fare);
         contentValues.put("status","0");
+        contentValues.put("Image",image);
         database.insert("data",null,contentValues);
     }
 
@@ -58,7 +58,8 @@ public class DataDatabase extends SQLiteOpenHelper {
             String num = cursor.getString(4);
             String fare = cursor.getString(5);
             String status = cursor.getString(6);
-            list.add(new Qwerty(name,spec,pick,del,num,fare,status));
+            byte[] image = cursor.getBlob(7);
+            list.add(new Qwerty(name,spec,pick,del,num,fare,status,image));
         }
         return list;
     }
@@ -71,7 +72,7 @@ public class DataDatabase extends SQLiteOpenHelper {
         database.delete("info",where,ss);
     }*/
 
-    void UpdateData(String nm, String spec, String pick, String del, String num, String fare, String status) {
+    void UpdateData(String nm, String spec, String pick, String del, String num, String fare, String status, byte[] image) {
 
         SQLiteDatabase database = getWritableDatabase();
         String where = "name = ?";
@@ -84,6 +85,7 @@ public class DataDatabase extends SQLiteOpenHelper {
         contentValues.put("num",num);
         contentValues.put("fare",fare);
         contentValues.put("status",status);
+        contentValues.put("Image",image);
         database.update("data",contentValues,where,ss);
     }
 

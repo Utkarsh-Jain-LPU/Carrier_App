@@ -26,6 +26,7 @@ public class SenderActivity extends AppCompatActivity {
                 break;
             case R.id.sender_status:
                 Intent intent1 = new Intent(SenderActivity.this,StatusActivity.class);
+                intent1.putExtra("ABC","sender");
                 startActivity(intent1);
                 break;
         }

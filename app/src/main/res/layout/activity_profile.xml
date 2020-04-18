@@ -16,7 +16,8 @@
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginBottom="30dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +40,8 @@
                 android:text="Name :-"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                android:textColor="@color/colorPrimary"/>
 
             <TextView
                 android:id="@+id/profile_name"
@@ -65,7 +67,8 @@
                 android:text="Number :-"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                android:textColor="@color/colorPrimary"/>
 
             <TextView
                 android:id="@+id/profile_number"
@@ -91,7 +94,8 @@
                 android:text="Email :-"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                android:textColor="@color/colorPrimary"/>
 
             <TextView
                 android:id="@+id/profile_email"
@@ -117,7 +121,8 @@
                 android:text="Aadhar No. :-"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                android:textColor="@color/colorPrimary"/>
 
             <TextView
                 android:id="@+id/profile_aadhar"
@@ -143,7 +148,8 @@
                 android:text="Address :-"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                android:textColor="@color/colorPrimary"/>
 
             <TextView
                 android:id="@+id/profile_address"

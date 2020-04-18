@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:text="Rider's Status"
         android:textSize="15sp"
-        android:textColor="#ffffff"
-        android:background="#000000"
         android:onClick="func"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_bg_color"
         tools:ignore="HardcodedText,UnusedAttribute"
         android:paddingHorizontal="10dp"/>
 

@@ -8,13 +8,13 @@
         tools:ignore="HardcodedText" />
 
     <item
-        android:id="@+id/drop"
-        android:title="Show Drop Location"
+        android:id="@+id/pick"
+        android:title="Show Pickup Location"
         tools:ignore="HardcodedText" />
 
     <item
-        android:id="@+id/pick"
-        android:title="Show Pickup Location"
+        android:id="@+id/drop"
+        android:title="Show Delivery Location"
         tools:ignore="HardcodedText" />
 
 </menu>

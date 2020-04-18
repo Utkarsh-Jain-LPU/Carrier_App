@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,15 +49,22 @@ class RiderAdapter extends BaseAdapter {
         db = new DataDatabase(context);
         final Qwerty curr = list.get(position);
         final String status;
-        if (curr.getStatus().equals("0")) {
-            status = "Not Picked";
+        switch (curr.getStatus()) {
+            case "0":
+                status = "Not Picked";
+                break;
+            case "1":
+                status = "On the Way";
+                break;
+            case "2":
+                status = "Payment Pending";
+                break;
+            default:
+                status = "Delivered";
+                break;
         }
-        else if (curr.getStatus().equals("1")) {
-            status = "On the Way";
-        }
-        else {
-            status = "Delivered";
-        }
+        ImageView imageView = view.findViewById(R.id.note_image);
+        imageView.setImageBitmap(BitmapUtility.getImage(curr.getImage()));
         final TextView textView = view.findViewById(R.id.note_text_view);
         String data = "Name :-  "+curr.getName()+"\n"
                 +"Specification :-  "+curr.getSpec()+"\n"
@@ -86,13 +94,13 @@ class RiderAdapter extends BaseAdapter {
                         switch (item.getItemId()) {
                             case R.id.extra:
                                 if (curr.getStatus().equals("0")) {
-                                    db.UpdateData(curr.getName(),curr.getSpec(),curr.getPick(),curr.getDel(),curr.getNumber(),curr.getFare(),"1");
-                                    Toast.makeText(context,"Status Updated...",Toast.LENGTH_LONG).show();
+                                    db.UpdateData(curr.getName(),curr.getSpec(),curr.getPick(),curr.getDel(),curr.getNumber(),curr.getFare(),"1",curr.getImage());
+                                    Toast.makeText(context,"Item Picked Successfully......",Toast.LENGTH_LONG).show();
                                     ((Activity)context).onBackPressed();
                                 }
                                 else if (curr.getStatus().equals("1")) {
-                                    db.UpdateData(curr.getName(),curr.getSpec(),curr.getPick(),curr.getDel(),curr.getNumber(),curr.getFare(),"2");
-                                    Toast.makeText(context,"Status Updated...",Toast.LENGTH_LONG).show();
+                                    db.UpdateData(curr.getName(),curr.getSpec(),curr.getPick(),curr.getDel(),curr.getNumber(),curr.getFare(),"2",curr.getImage());
+                                    Toast.makeText(context,"Item Delivered Successfully......",Toast.LENGTH_LONG).show();
                                     ((Activity)context).onBackPressed();
                                 }
                                 break;
